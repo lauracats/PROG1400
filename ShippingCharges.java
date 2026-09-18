@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
     /* This program calculates the total cost of an order including shipping charges,
     * using an if-else statement and simple calculations.
