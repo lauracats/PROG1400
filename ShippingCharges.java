@@ -7,7 +7,7 @@ import java.util.Scanner;
     */
 public class ShippingCharges {
     
-public static void main(String[] args) {
+void main() {
     // Create a scanner object
     Scanner input = new Scanner(System.in);
 
@@ -21,25 +21,33 @@ public static void main(String[] args) {
 
     // Ask user to enter their total purchase price
     System.out.println("Enter the amount of your total purchase: ");
-    totalPurchase = input.nextDouble();
-
+    // While loop to catch exceptions
+    while (true) {
+        try {
+            totalPurchase = input.nextDouble();
+            break;
+        } catch (InputMismatchException e) {
+            System.out.println("Please enter a valid number.");
+            input.next();
+            System.out.println("Enter the amount of your total purchase: ");
+        }
+    }
+    
     // If customer purchase is under 50, add 10 dollars to shipping, else shipping is free
-    if (totalPurchase < 50) {
-        shippingCost = 10;
-    }
-    else {
-        shippingCost = 0;
-    }
+        if (totalPurchase < 50) {
+            shippingCost = 10;
+        } else {
+            shippingCost = 0;
+        }
 
     // Calculate total cost as shipping plus total purchase
     totalCost = totalPurchase + shippingCost;
 
     // Print out the total cost with a message
-    System.out.println("Your final total with shipping is: $" + totalCost);
-
+    System.out.printf("Your final total with shipping is: $%.2f%n", totalCost);
+    
     // Close input
     input.close();
+    
     }
-
 }
-
