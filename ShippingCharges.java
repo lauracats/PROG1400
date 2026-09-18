@@ -1,9 +1,13 @@
+import java.util.Scanner;
+
     /* This program calculates the total cost of an order including shipping charges,
     * using an if-else statement and simple calculations.
     * Laura Mitchell W0199744
     * PROG 1400 In-Class Exercise: Shipping Charges
     */
-void main() {
+public class ShippingCharges {
+    
+public static void main(String[] args) {
     // Create a scanner object
     Scanner input = new Scanner(System.in);
 
@@ -36,3 +40,6 @@ void main() {
     // Close input
     input.close();
     }
+
+}
+
